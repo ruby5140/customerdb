@@ -1,0 +1,10 @@
+<h1>顧客情報一覧</h1>
+
+<ul>
+  <% @customers.each do |customer| %>
+   <li><%= customer.company %></li>
+   <li><%= customer.phone %></li>
+   <li><%= customer.server %></li>
+   <li><%= customer.remark %></li>
+ <% end %>
+</ul>
