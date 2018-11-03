@@ -15,9 +15,9 @@ class CustomersController < ApplicationController
     def create
         @customers = Customer.new(customer_params)
         
-        if @customer.save
+        if @customers.save
           flash[:success] = "正常に登録されました"
-          redirect_to @customer
+          redirect_to @customers
         else
           flash.now[:danger] = "登録に失敗しました"  
           render :new
@@ -30,9 +30,23 @@ class CustomersController < ApplicationController
     end
     
     def update
+        @customers = Customer.find(params[:id])
+        
+        if @customers.update(customer_params)
+          flash[:success] = "正常に更新されました"
+          redirect_to @customers
+        else
+          flash.now[:danger] = "更新されませんでした"
+          render :edit
+        end 
     end
     
     def destroy
+        @customers = Customer.find(params[:id])
+        @customers.destroy
+        
+        flash[:success] = "正常に削除されました"
+        redirect_to customers_url
     end
     
     private

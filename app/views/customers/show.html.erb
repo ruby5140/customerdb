@@ -6,3 +6,6 @@
 <p><%= @customers.remark %></p>
 
 <%= link_to "一覧に戻る", customers_path %>
+<%= link_to "この登録内容を編集する", edit_customer_path(@customers) %>
+<%= link_to "このメッセージを削除する", @customers, method: :delete, data: { confirm: "本当に削除してよろしいですか？" } %>
+
