@@ -1,0 +1,14 @@
+<h1>新規登録</h1>
+
+<%= form_for(@customers) do |f| %>
+  <%= f.label :company, "会社" %>
+  <%= f.text_field :company %>
+  <%= f.label :phone, "電話番号" %>
+  <%= f.text_field :phone %>
+  <%= f.label :server, "監視サーバ" %>
+  <%= f.text_field :server %>
+  <%= f.label :remark, "備考" %>
+  <%= f.text_field :remark %>
+<% end %>
+
+<%= link_to "一覧に戻る", customers_path %>
