@@ -3,26 +3,13 @@
 
 
 
-<%= form_tag(customers_path,:method => 'get') do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search', :name => nil %>
-<% end %>
-
-
-<% if @customers %>
 
   <% @customers.each do |customer| %>
    <li><%= link_to customer.id, customer %> : <%= customer.company %></li>
    <li><%= customer.phone %></li>
    <li><%= customer.server %></li>
    <li><%= customer.remark %></li>
-   
-   
-   
  <% end %>
 
-<% end %>
 
 <%= link_to "会社登録", new_customer_path %>
-
-

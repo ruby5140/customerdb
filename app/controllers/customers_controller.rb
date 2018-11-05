@@ -3,8 +3,17 @@ class CustomersController < ApplicationController
     before_action :set_cusomer, only: [:show, :edit, :update, :destroy]
     
     def index
-        @customers = Customer.all
+       
+        #@customers = Customer.all
+        @customers = Customer.search(params[:search])
+        
     end
+    
+    #def search
+        
+         #@customers = Customer.search(params[:search])
+    #end
+    
     
     def show
         # before_action
@@ -32,7 +41,7 @@ class CustomersController < ApplicationController
     end
     
     def update
-　　　　# before_action
+    # before_action
         
         if @customers.update(customer_params)
           flash[:success] = "正常に更新されました"
