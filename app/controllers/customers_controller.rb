@@ -1,11 +1,13 @@
 class CustomersController < ApplicationController
+    # 処理を共通化
+    before_action :set_cusomer, only: [:show, :edit, :update, :destroy]
     
     def index
         @customers = Customer.all
     end
     
     def show
-        @customers = Customer.find(params[:id])
+        # before_action
     end
     
     def new
@@ -26,11 +28,11 @@ class CustomersController < ApplicationController
     end
     
     def edit
-        @customers = Customer.find(params[:id])
+        # before_action
     end
     
     def update
-        @customers = Customer.find(params[:id])
+　　　　# before_action
         
         if @customers.update(customer_params)
           flash[:success] = "正常に更新されました"
@@ -42,14 +44,22 @@ class CustomersController < ApplicationController
     end
     
     def destroy
-        @customers = Customer.find(params[:id])
+　　　　# before_action
         @customers.destroy
         
         flash[:success] = "正常に削除されました"
         redirect_to customers_url
     end
     
+    # 以下privateメソッド
     private
+    
+    # 共通化 
+    def set_cusomer
+        @customers = Customer.find(params[:id])
+    end
+    
+    
     
     # Strong Parameter
     def customer_params
