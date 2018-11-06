@@ -1,0 +1,15 @@
+<!-- # パーシャル -->
+
+
+ <!-- # バリデーション -->
+ 
+    <% if customer.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+          <% customer.errors.full_messages.each do |customer| %>
+            <li><%= customer %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
