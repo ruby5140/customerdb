@@ -1,20 +1,16 @@
 class CustomersController < ApplicationController
     # 処理を共通化
     before_action :set_cusomer, only: [:show, :edit, :update, :destroy]
-    
+
+    # 各アクションを定義    
     def index
-       
-        #@customers = Customer.all
-        @customers = Customer.search(params[:search])
         
     end
     
-    #def search
-        
-         #@customers = Customer.search(params[:search])
-    #end
-    
-    
+    def search
+        @customers = Customer.search(params[:search])
+    end
+
     def show
         # before_action
     end
