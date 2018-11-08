@@ -1,3 +1,5 @@
 <% flash.each do |customer_type, customer| %>
-  <div><%= customer %></div>
+  <div class="alert alert-<%= customer_type %>">
+    <%= customer %>
+  </div>
 <% end %>

@@ -1,5 +1,8 @@
 <h1>id: <%= @customers.id %> の編集ページ</h1>
 
+<!-- # バリデーション -->
+<%= render 'form', customer: @customers %>
+
 <%= form_for(@customers) do |f| %>
   <%= f.label :company, "会社" %>
   <%= f.text_field :company %>
@@ -9,10 +12,7 @@
   <%= f.text_field :server %>
   <%= f.label :remark, "備考" %>
   <%= f.text_field :remark %>
-  
   <%= f.submit "更新" %>
 <% end %>
-
-<%= render 'form', customer: @customers %>
 
 <%= link_to "一覧に戻る", customers_path %>

@@ -1,5 +1,8 @@
 <h1>新規登録</h1>
 
+<!-- # バリデーション -->
+<%= render 'form', customer: @customers %>
+
 <%= form_for(@customers) do |f| %>
   <%= f.label :company, "会社" %>
   <%= f.text_field :company %>
@@ -9,10 +12,7 @@
   <%= f.text_field :server %>
   <%= f.label :remark, "備考" %>
   <%= f.text_field :remark %>
-  
   <%= f.submit '登録' %>
 <% end %>
-
-<%= render 'form', customer: @customers %>
 
 <%= link_to "一覧に戻る", customers_path %>

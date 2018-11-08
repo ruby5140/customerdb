@@ -1,4 +1,6 @@
-<h1>顧客管理DB</h1>
+<h1>会社情報</h1>
+
+
 
 <% if @customers %>
   <% @customers.each do |customer| %>
@@ -8,7 +10,22 @@
      <li><%= customer.remark %></li>
   <% end %>
 <% end %>
+<%= link_to "検索画面に戻る", customers_path %>
 
+<% 
+=begin 
+%>
+複数行コメント
+<% if @customers %>
+  <% @customers.each do |customer| %>
+     <li><%= link_to customer.id, customer %> : <%= customer.company %></li>
+     <li><%= customer.phone %></li>
+     <li><%= customer.server %></li>
+     <li><%= customer.remark %></li>
+  <% end %>
+<% end %>
 
-<%= link_to "会社登録", new_customer_path %>
-<p>search</p>
+<%
+=end
+%>
+

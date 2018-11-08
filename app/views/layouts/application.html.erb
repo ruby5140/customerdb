@@ -17,11 +17,14 @@
   </head>
 
   <body>
+    <%= render 'layouts/navbar' %>
+    
     <div class="container">
       <!-- # flashメッセージ -->
       <%= render 'layouts/flash_customers' %>
       
       <%= yield %>
     </div>
+    
   </body>
 </html>
