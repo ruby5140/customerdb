@@ -1,28 +1,52 @@
-
-
-<div class="row">
- <div class="col-sm-6">
-   <div class="form-group">
-     <label class="col-sm-4 control-label" for="">会社名</label>
-      <div class="col-sm-8">
-         <%= form_tag(search_customers_path,:method => 'get') do %>
-         <%= text_field_tag :search %>
-         
-         
-         <div class="col-sm-12 row text-center">
-          <%= link_to customers_path, class: 'btn btn-default btn-left' do %>クリア<% end %>
-          <%= submit_tag 'Search', :name => nil , class: 'btn btn-default btn-primary' %>
-         <% end %>
-         
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="#fa fa-search"></i> 検索条件</h3>
+     </div>
+      <div class="panel-body">
+        <div class="row">
+          <%= form_tag(search_customers_path,:method => 'get') do %>
+           <div class="col-sm-6">
+               <!-- 会社名 -->
+               <div class="form-group">
+                <label class="col-sm-4 control-label" for="">会社名</label>
+                <div class="col-sm-8"><%= text_field_tag :search  %>
+                </div>
+               </div>
+               
+               <!-- 携帯電話 -->
+               <div class="form-group">
+                <label class="col-sm-4 control-label" for="">携帯電話</label>
+                <div class="col-sm-8"><%= text_field_tag :xxxxxx  %>
+                </div>
+               </div>
+           </div>
+               
+           <div class="col-sm-6">
+               <!-- サーバ -->
+               <div class="form-group">
+                <label class="col-sm-4 control-label" for="">サーバ</label>
+                <div class="col-sm-8"><%= text_field_tag :xxxxxx  %>
+                </div>
+               </div>
+             
+               <!-- 備考 -->
+               <div class="form-group">
+                <label class="col-sm-4 control-label" for="">備考</label>
+                <div class="col-sm-8"><%= text_field_tag :xxxxxx  %>
+                </div>
+               </div>         
+           </div>  
+        　 <div></div>
+           <div class="col-sm-12 row text-center">
+            <%= link_to customers_path, class: 'btn btn-default btn-left' do %>Clear<% end %>
+            <%= submit_tag 'Search', :name => nil , class: 'btn btn-grey' %>
+            <% end %>
+          </div>
         </div>
       </div>
+    </div>
   </div>
- </div>
-
 </div>
-
-
-
 
 
 
