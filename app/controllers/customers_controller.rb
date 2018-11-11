@@ -4,11 +4,23 @@ class CustomersController < ApplicationController
 
     # 各アクションを定義    
     def index
-        
+        #CSV
+        @customers = Customer.all
+        respond_to do |format|
+            format.html 
+            
+             format.csv do
+             send_data render_to_string, filename: "customers.csv", type: :csv
+             end
+        end
+
     end
     
     def search
         @customers = Customer.search(params[:search])
+        
+
+
     end
 
     def show
