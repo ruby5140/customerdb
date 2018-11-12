@@ -3,7 +3,12 @@ Rails.application.routes.draw do
 
   # RESTful + searchを追加
   resources :customers do
-        collection{ get "search" }
-    end
+        collection do
+          get "search"
+          get "csv_output"
+        end
+  end
+    
+  #get 'customers/customercsv', to: 'customers#customercsv'
   
 end
