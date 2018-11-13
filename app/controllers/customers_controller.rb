@@ -2,38 +2,19 @@ class CustomersController < ApplicationController
     # 処理を共通化
     before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
-    # 各アクションを定義    
     def index
-        #CSV
-        #@customers = Customer.all
-        #respond_to do |format|
-            #format.html 
-            
-            #format.csv do
-            #send_data render_to_string, filename: "customers.csv", type: :csv
-             #end
-        #end
+
     end
     
+    #search用
     def search
         @customers = Customer.search(params[:search])
     end
     
     #CSV用
     def csv_output
-        #@customers = params[:customer]
-        @customers = Customer.all
-        
-        #@customers = Customer.all
-        logger.debug("csv_outputに入りました")
-        logger.debug(@customers.inspect)
+        @customers = Customer.where(id: params[:customer_ids])
         send_data render_to_string, filename: "customers.csv", type: :csv
-        #respond_to do |format|
-           #format.html
-           #format.csv do
-           #send_data render_to_string, filename: "customers.csv", type: :csv
-         #end
-        #end
     end
    
     def show

@@ -8,16 +8,10 @@ class Customer < ApplicationRecord
 
   def self.search(search)
     
-    #scope :search_like, -> search { where('company like ?', "%#{search}%") if search.present? }
-    
     if search
-     #logger.debug("個別に入りました")
-     Customer.where(['company LIKE ?', "%#{search}%"])
-     
 
-      
+     Customer.where(['company LIKE ?', "%#{search}%"])
     else
-    #logger.debug("Customer.allに入りました")
      #Customer.all
     end
   end

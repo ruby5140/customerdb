@@ -1,6 +1,6 @@
 <h1>会社情報</h1>
 
-<h1><%# logger.debug(@customers.inspect) %></h1>
+<%# logger.debug(@customers.inspect) %>
 
 <% if @customers %>
   <% @customers.each do |customer| %>
@@ -8,13 +8,10 @@
      <li><%= customer.phone %></li>
      <li><%= customer.server %></li>
      <li><%= customer.remark %></li>
-
   <% end %>
 <% end %>
 
-
-<%= link_to "csv出力", csv_output_customers_path(format: :csv) %> 
- <%#= link_to "csv出力", csv_output_customers_path(@customers, format: :csv) %> 
+<%= link_to "csv出力", csv_output_customers_path(customer_ids: @customers.pluck(:id), format: :csv) %>
 
 <%= link_to "検索画面に戻る", customers_path %>
 
