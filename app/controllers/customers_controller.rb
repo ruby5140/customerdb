@@ -8,7 +8,12 @@ class CustomersController < ApplicationController
     
     #search用
     def search
-        @customers = Customer.search(params[:search])
+       if params[:search].present?
+        #if params.has_key(:search)? 
+          @customers = Customer.search(params[:search])
+       else
+          @customers = Customer.all
+       end
     end
     
     #CSV用
