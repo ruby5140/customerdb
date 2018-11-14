@@ -8,11 +8,17 @@ class CustomersController < ApplicationController
     
     #search用
     def search
+       #検索ワードなし →　空の文字列
        if params[:search].present?
-        #if params.has_key(:search)? 
+          #if params.has_key(:search)? 
           @customers = Customer.search(params[:search])
+       elsif params[:search].nil?
+          #@customers = Customer.all
+          #空の配列
+          @customers = []
        else
           @customers = Customer.all
+       
        end
     end
     
