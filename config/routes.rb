@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   #get 'top/index'
   # topページ追加
   root to: 'top#index'

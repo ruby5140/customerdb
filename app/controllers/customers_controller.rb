@@ -1,9 +1,11 @@
 class CustomersController < ApplicationController
+    # Customerの全アクションはログインが必須
+    before_action :authenticate_user!
     # 処理を共通化
     before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
     def index
-
+      
     end
     
     #search用
