@@ -14,8 +14,15 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to  '会社登録', new_customer_path %></li>
           <li><a href="#">Signup</a></li>
-          <li><a href="#"><%= link_to "Login", new_user_session_path %></a></li>
+          <%#= link_to "Login", new_user_session_path %>
             
+            
+         <% if user_signed_in? %>
+         <li><a href="#"><%= link_to "Logout", destroy_user_session_path, method: :delete  %></a></li>
+         <% else %>
+         <li><a href="#"><%= link_to "Login", new_user_session_path %></a></li>
+    
+<% end %>
              
           
         </ul>

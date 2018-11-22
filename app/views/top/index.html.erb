@@ -1,15 +1,26 @@
+<% if user_signed_in? %>
+
+
+<%= render template: 'customers/index' %>
+
+<%= link_to "Logout", destroy_user_session_path, method: :delete , class: 'btn btn-lg btn-primary' %>
+
+<% else %>
+
 <div class="center jumbotron">
   <div class="text-center">
     <h1>CustomerDB</h1>
   </div>
 </div>
 
-    <% if user_signed_in? %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete , class: 'btn btn-lg btn-primary' %>
-<% else %>
-    <%= link_to "Login", new_user_session_path, class: 'btn btn-lg btn-primary'%>
+    <%# if user_signed_in? %>
+    <%#= link_to "Logout", destroy_user_session_path, method: :delete , class: 'btn btn-lg btn-primary' %>
+<%# else %>
+    <%#= link_to "Login", new_user_session_path, class: 'btn btn-lg btn-primary'%>
     
-<% end %>
+<%# end %>
       <!-- # flashメッセージtest -->
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<p class="notice"><%#= notice %></p>
+<p class="alert"><%#= alert %></p>
+
+<% end %>
