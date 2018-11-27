@@ -2,6 +2,9 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    
+    #admin以外読み取り
+    can :read, :all
 
     if user && user.admin_flg?
       can :access, :rails_admin
