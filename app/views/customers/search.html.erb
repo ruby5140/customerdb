@@ -21,8 +21,15 @@
 
 	 <table class="table table-striped table-bordered" >
 		<tr>
-			 <td rowspan="6" class="col-md-1 td_vertical_align_middle" style="" align="center"><%= link_to customer.id, customer %></td>
- 			<td class="col-md-1">会社名</td>
+			 <td rowspan="6" class="col-md-1 td_vertical_align_middle" style="" align="center">
+			  <%#= link_to customer.id, customer %>
+     <% if can? :edit, @customer %>
+        <%= link_to customer.id, customer %>
+     <% else %>
+        <%= customer.id %>
+     <% end %>
+			 </td>
+			 <td class="col-md-1">会社名</td>
  			<td class="col-md-3"><%= customer.company %></td>
  			<td class="col-md-1">担当者</td>
  			<td class="col-md-2">テスト</td>
