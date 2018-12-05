@@ -23,6 +23,8 @@ module CustomerDb
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     
+    # UTC時間から変更
+    config.time_zone = 'Tokyo'
     # レイアウト崩れ対策
     config.action_view.field_error_proc = Proc.new do |html_tag, instance|
       if instance.kind_of?(ActionView::Helpers::Tags::Label)

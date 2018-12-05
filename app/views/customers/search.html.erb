@@ -41,8 +41,8 @@
 			<td "col-md-"><%= customer.server %></td>
 			<td "col-md-">契約プラン</td>
 			<td>メールのみ</td>
-			<td "col-md-">解約日</td>
-			<td></td>
+			<td "col-md-">更新日</td>
+			<td><%= customer.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
 		</tr>
 		<tr>
 			<td>緊急連絡先1</td>
