@@ -1,7 +1,85 @@
-<h1>新規登録</h1>
-
 <!-- # バリデーション -->
 <%= render 'form', customer: @customers %>
+
+<style type="text/css">
+.td_vertical_align_middle.td_vertical_align_middle {
+  vertical-align: middle;
+}
+</style>
+
+<%= form_for(@customers) do |f| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="#fa fa-search"></i> 会社登録</h3>
+     </div>
+       </div>
+	<tbody>
+	 <table class="table table-striped table-bordered" >
+		<tr>
+			<td class="col-md-1"><%= f.label :company, "会社" %></td>
+ 			<td class="col-md-3"><%= f.text_field :company %></td>
+ 			<td class="col-md-1">担当者</td>
+ 			<td class="col-md-2">テスト</td>
+ 			<td class="col-md-1">契約日</td>
+ 			<td class="col-md-2">2018.10.01</td>
+		</tr>
+		<tr>
+			<td class="col-md-"><%= f.label :server, "監視サーバ" %></td>
+			<td "col-md-"><%= f.text_field :server %></td>
+			<td "col-md-">契約プラン</td>
+			<td>メールのみ</td>
+			<td "col-md-">更新日</td>
+			<td>xxxx.xxx.xxx</td>
+		</tr>
+		<tr>
+			<td><%= f.label :phone, "緊急連絡先1" %></td>
+			<td><%= f.text_field :phone %></td>
+			<td>名前1</td>
+			<td>テスト</td>
+      <td>アドレス1</td>
+      <td>hara@test.com</td>
+		</tr>
+		<tr>
+			<td>緊急連絡先2</td>
+			<td></td>
+			<td>名前2</td>
+			<td></td>
+      <td>アドレス2</td>
+      <td></td>
+		</tr>
+		<tr>
+			<td>緊急連絡先3</td>
+			<td></td>
+			<td>名前3</td>
+			<td></td>
+      <td>アドレス3</td>
+      <td></td>
+		</tr>
+		<tr>
+			<td><%= f.label :remark, "備考" %></td>
+			<td colspan="7"><%= f.text_field :remark %></td>
+		</tr>
+
+	</table>
+		</tbody>
+		
+		<div class="col-sm-12 row text-center">
+		<%= f.submit '登録' , class: 'btn btn-default btn-left' %>
+		<%= link_to "検索画面に戻る", customers_path , class: 'btn btn-default btn-left' %>
+    </div>
+	<% end %>
+</div>
+
+
+
+  
+
+
+
+
+<% 
+=begin 
+%>
 
 <%= form_for(@customers) do |f| %>
   <%= f.label :company, "会社" %>
@@ -16,3 +94,9 @@
 <% end %>
 
 <%= link_to "一覧に戻る", customers_path %>
+
+<% 
+=end 
+%>
+
+

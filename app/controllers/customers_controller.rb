@@ -36,6 +36,8 @@ class CustomersController < ApplicationController
     
     def new
         @customers = Customer.new
+        
+
     end
     
     def create
@@ -45,7 +47,7 @@ class CustomersController < ApplicationController
           flash[:success] = "正常に登録されました"
           redirect_to @customers
         else
-          flash.now[:danger] = "登録に失敗しました"  
+          flash.now[:danger] = "登録��失敗しました"  
           render :new
         end
         
