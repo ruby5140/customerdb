@@ -12,16 +12,10 @@
        </div>
 
 	<tbody>
-	 
-	 
-
  <% @customers.each do |customer| %>
- 
- 
-
 	 <table class="table table-striped table-bordered" >
 		<tr>
-			 <td rowspan="6" class="col-md-1 td_vertical_align_middle" style="" align="center">
+			 <td rowspan="10" class="col-md-1 td_vertical_align_middle" style="" align="center">
 			  <%#= link_to customer.id, customer %>
      <% if can? :edit, @customer %>
         <%= link_to customer.id, customer %>
@@ -31,42 +25,69 @@
 			 </td>
 			 <td class="col-md-1">会社名</td>
  			<td class="col-md-3"><%= customer.company %></td>
- 			<td class="col-md-1">担当者</td>
- 			<td class="col-md-2">テスト</td>
+ 			<td class="col-md-1">識別子</td>
+ 			<td class="col-md-2">isdn</td>
  			<td class="col-md-1">契約日</td>
  			<td class="col-md-2">2018.10.01</td>
 		</tr>
 		<tr>
-			<td class="col-md-">サーバ</td>
+			<td class="col-md-">監視プロダクト </td>
 			<td "col-md-"><%= customer.server %></td>
-			<td "col-md-">契約プラン</td>
-			<td>メールのみ</td>
-			<td "col-md-">更新日</td>
-			<td><%= customer.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
+			<td "col-md-">監視方法</td>
+			<td>内部・外部</td>
+			<td "col-md-">解約日</td>
+			<td></td>
 		</tr>
 		<tr>
-			<td>緊急連絡先1</td>
-			<td><%= customer.phone %></td>
-			<td>名前1</td>
-			<td>テスト</td>
-      <td>アドレス1</td>
-      <td>hara@test.com</td>
+			<td>利用サービス</td>
+			<td>VDC</td>
+			<td>対応レベル</td>
+			<td>メール</td>
+   <td>更新日</td>
+   <td><%= customer.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
 		</tr>
 		<tr>
-			<td>緊急連絡先2</td>
-			<td></td>
-			<td>名前2</td>
-			<td></td>
-      <td>アドレス2</td>
-      <td></td>
+			<td>監視設定シート</td>
+			<td colspan="7">\\192.168.100.xx\xx\xx\xx\01_監視設定登録シート</td>
 		</tr>
 		<tr>
-			<td>緊急連絡先3</td>
+			<td>監視提供時間</td>
+			<td>24/365</td>
+			<td>曜日</td>
+			<td>月～日</td>
+   <td colspan="4"></td>
+		</tr>
+		<tr>
+			<td colspan="">営業時間内</td>
+			<td>会社名</td>
+			<td>部署名</td>
+			<td>氏名</td>
+   <td>Email</td>
+   <td>電話番号</td>
+		</tr>
+		<tr>
+			<td colspan="">1</td>
 			<td></td>
-			<td>名前3</td>
 			<td></td>
-      <td>アドレス3</td>
-      <td></td>
+			<td></td>
+   <td></td>
+   <td><%= customer.phone %></td>
+		</tr>
+		<tr>
+			<td colspan="">2</td>
+			<td></td>
+			<td></td>
+			<td></td>
+   <td></td>
+   <td></td>
+		</tr>
+		<tr>
+			<td colspan="">3</td>
+			<td></td>
+			<td></td>
+			<td></td>
+   <td></td>
+   <td></td>
 		</tr>
 		<tr>
 			<td>備考</td>
