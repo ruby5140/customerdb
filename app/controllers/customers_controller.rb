@@ -87,7 +87,8 @@ class CustomersController < ApplicationController
 
     # Strong Parameter
     def customer_params
-        params.require(:customer).permit(:company , :phone , :server , :remark)
+        #params.require(:customer).permit(:company , :phone , :server , :remark)
+        params.require(:customer).permit(:company , :company2 , :company3 , :company4 , :vdc , :contractdate , :server , :monitoring , :cancellationdate , :product , :level , :sheet , :deliverytime , :day , :departmentname , :departmentname2 , :departmentname3 , :name , :name2 , :name3 , :email , :email2 , :email3 , :phone , :phone2 , :phone3 , :remark)
     
     end
 end    

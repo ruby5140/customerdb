@@ -1,11 +1,124 @@
+<style type="text/css">
+.td_vertical_align_middle.td_vertical_align_middle {
+ vertical-align: middle;
+}
+</style>
+
+<div class="panel panel-default">
+ <div class="panel-heading">
+ <h3 class="panel-title"><i class="#fa fa-search"></i> 登録詳細：<%= @customers.id %> </h3>
+ </div>
+</div>
+
+<tbody>
+	<table class="table table-stripe table-bordere" >
+		<tr>
+			<td class="col-md-1"><p>会社名</p></td>
+ 			<td class="col-md-3"><%= @customers.company %></td>
+ 			<td class="col-md-1"><p>識別子</p></td>
+ 			<td class="col-md-2"><%= @customers.vdc %></td>
+ 			<td class="col-md-1"><p>契約日</p></td>
+ 			<td class="col-md-2"><%= @customers.contractdate %></td>
+		</tr>
+		<tr>
+			<td class="col-md-"><p>監視プロダクト</p></td>
+			<td "col-md-"><%= @customers.server %></td>
+			<td "col-md-"><p>監視方法</p></td>
+			<td><%= @customers.monitoring %></td>
+			<td "col-md-"><p>解約日</p></td>
+			<td><%= @customers.cancellationdate %></td>
+		</tr>
+		<tr>
+			<td><p>利用サービス</p></td>
+			<td><%= @customers.product %></td>
+			<td><p>対応レベル</p></td>
+			<td><%= @customers.level %></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><p>登録シート</p></td>
+			<td><%= @customers.sheet %></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><p>提供時間</p></td>
+			<td><%= @customers.deliverytime %></td>
+			<td><p>曜日</p></td>
+			<td><%= @customers.day %></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><p>営業時間内</p></td>
+			<td><p>会社名</p></td>
+			<td><p>部署名</p></td>
+			<td><p>氏名</p></td>
+			<td><p>Email</p></td>
+			<td><p>電話番号</p></td>
+		</tr>
+		<tr>
+			<td><p>1</p></td>
+			<td><%= @customers.company2 %></td>
+			<td><%= @customers.departmentname %></td>
+			<td><%= @customers.name %></td>
+			<td><%= @customers.email %></td>
+			<td><%= @customers.phone %></td>
+		</tr>
+		<tr>
+			<td><p>2</p></td>
+			<td><%= @customers.company3 %></td>
+			<td><%= @customers.departmentname2 %></td>
+			<td><%= @customers.name2 %></td>
+			<td><%= @customers.email2 %></td>
+			<td><%= @customers.phone2 %></td>
+		</tr>
+		<tr>
+			<td><p>3</p></td>
+			<td><%= @customers.company4 %></td>
+			<td><%= @customers.departmentname3 %></td>
+			<td><%= @customers.name3 %></td>
+			<td><%= @customers.email3 %></td>
+			<td><%= @customers.phone3 %></td>
+		</tr>
+		<tr>
+			<td><p>備考</p></td>
+			<td colspan="7"><%= @customers.remark %></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	 </table>
+ </tbody>
+
+<div class="col-sm-12 row text-center">
+<%= link_to "一覧に戻る", customers_path , class: 'btn btn-default btn-left' %>
+<%= link_to "この登録内容を編集する", edit_customer_path(@customers) , class: 'btn btn-default btn-left' %>
+<%= link_to "このメッセージを削除する", @customers, method: :delete, data: { confirm: "本当に削除してよろしいですか？" } , class: 'btn btn-default btn-left' %>
+</div>
+
+
+
+
+
+
+<% 
+=begin 
+%>
 <h1>id: <%= @customers.id %> の詳細ページ</h1>
 
-<p><%= @customers.company %></p>
-<p><%= @customers.phone %></p>
-<p><%= @customers.server %></p>
-<p><%= @customers.remark %></p>
-
-<%= link_to "一覧に戻る", customers_path %>
-<%= link_to "この登録内容を編集する", edit_customer_path(@customers) %>
-<%= link_to "このメッセージを削除する", @customers, method: :delete, data: { confirm: "本当に削除してよろしいですか？" } %>
-
+<p>会社名：<%= @customers.company %></p>
+<p>識別子：<%= @customers.vdc %></p>
+<p>契約日：<%= @customers.contractdate %></p>
+<p>監視プロダクト：<%= @customers.server %></p>
+<p>監視方法：<%= @customers.monitoring %></p>
+<%
+=end
+%>

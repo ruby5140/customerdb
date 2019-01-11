@@ -26,35 +26,35 @@
 			 <td class="col-md-1">会社名</td>
  			<td class="col-md-3"><%= customer.company %></td>
  			<td class="col-md-1">識別子</td>
- 			<td class="col-md-2">isdn</td>
+ 			<td class="col-md-2"><%= customer.vdc %></td>
  			<td class="col-md-1">契約日</td>
- 			<td class="col-md-2">2018.10.01</td>
+ 			<td class="col-md-2"><%= customer.contractdate %></td>
 		</tr>
 		<tr>
 			<td class="col-md-">監視プロダクト </td>
 			<td "col-md-"><%= customer.server %></td>
 			<td "col-md-">監視方法</td>
-			<td>内部・外部</td>
+			<td><%= customer.monitoring %></td>
 			<td "col-md-">解約日</td>
-			<td></td>
+			<td><%= customer.cancellationdate %></td>
 		</tr>
 		<tr>
 			<td>利用サービス</td>
-			<td>VDC</td>
+			<td><%= customer.product %></td>
 			<td>対応レベル</td>
-			<td>メール</td>
+			<td><%= customer.level %></td>
    <td>更新日</td>
    <td><%= customer.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
 		</tr>
 		<tr>
 			<td>監視設定シート</td>
-			<td colspan="7">\\192.168.100.xx\xx\xx\xx\01_監視設定登録シート</td>
+			<td colspan="7"><%= customer.sheet %></td>
 		</tr>
 		<tr>
 			<td>監視提供時間</td>
-			<td>24/365</td>
+			<td><%= customer.deliverytime %></td>
 			<td>曜日</td>
-			<td>月～日</td>
+			<td><%= customer.day %></td>
    <td colspan="4"></td>
 		</tr>
 		<tr>
@@ -67,27 +67,27 @@
 		</tr>
 		<tr>
 			<td colspan="">1</td>
-			<td></td>
-			<td></td>
-			<td></td>
-   <td></td>
+			<td><%= customer.company2 %></td>
+			<td><%= customer.departmentname %></td>
+			<td><%= customer.name %></td>
+   <td><%= customer.email %></td>
    <td><%= customer.phone %></td>
 		</tr>
 		<tr>
 			<td colspan="">2</td>
-			<td></td>
-			<td></td>
-			<td></td>
-   <td></td>
-   <td></td>
+			<td><%= customer.company3 %></td>
+			<td><%= customer.departmentname2 %></td>
+			<td><%= customer.name2 %></td>
+   <td><%= customer.email2 %></td>
+   <td><%= customer.phone2 %></td>
 		</tr>
 		<tr>
 			<td colspan="">3</td>
-			<td></td>
-			<td></td>
-			<td></td>
-   <td></td>
-   <td></td>
+			<td><%= customer.company4 %></td>
+			<td><%= customer.departmentname3 %></td>
+			<td><%= customer.name3 %></td>
+   <td><%= customer.email3 %></td>
+   <td><%= customer.phone3 %></td>
 		</tr>
 		<tr>
 			<td>備考</td>
