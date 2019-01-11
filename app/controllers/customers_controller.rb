@@ -70,7 +70,7 @@ class CustomersController < ApplicationController
     end
     
     def destroy
-　　　　# before_action
+# before_action
         @customers.destroy
         
         flash[:success] = "正常に削除されました"
