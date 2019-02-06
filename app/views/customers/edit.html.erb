@@ -1,3 +1,6 @@
+<% 
+=begin 
+%>
 <h1>id: <%= @customers.id %> の編集ページ</h1>
 
 <!-- # バリデーション -->
@@ -6,6 +9,8 @@
 <%= form_for(@customers) do |f| %>
   <%= f.label :company, "会社" %>1
   <%= f.text_field :company %>
+  
+  
   <%= f.label :phone, "電話番号" %>
   <%= f.text_field :phone %>
   <%= f.label :server, "監視サーバ" %>
@@ -15,4 +20,106 @@
   <%= f.submit "更新" %>
 <% end %>
 
-<%= link_to "一覧に戻る", customers_path %>
+<%= link_to "一覧に戻るる", customers_path %>
+
+<% 
+=end 
+%>
+
+<%= render 'form', customer: @customers %>
+
+<%= form_for(@customers) do |f| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="#fa fa-search"></i> 会社編集</h3>
+     </div>
+       </div>
+	<tbody>
+	 <table class="table table-stripe table-bordere" >
+		<tr>
+			<td class="col-md-1"><%= f.label :company, "会社名" %></td>
+ 			<td class="col-md-3"><%= f.text_field :company %></td>
+ 			<td class="col-md-1"><%= f.label :vdc, "識別子" %></td>
+ 			<td class="col-md-2"><%= f.text_field :vdc %></td>
+ 			<td class="col-md-1"><%= f.label :contractdate, "契約日" %></td>
+ 			<td class="col-md-2"><%= f.text_field :contractdate %></td>
+		</tr>
+		<tr>
+			<td class="col-md-"><%= f.label :server, "監視プロダクト" %></td>
+			<td "col-md-"><%= f.text_field :server %></td>
+			<td "col-md-"><%= f.label :monitoring, "監視方法" %></td>
+			<td><%= f.text_field :monitoring %></td>
+			<td "col-md-"><%= f.label :cancellationdate, "解約日" %></td>
+			<td><%= f.text_field :cancellationdate %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :product, "利用サービス" %></td>
+			<td><%= f.text_field :product %></td>
+			<td><%= f.label :level, "対応レベル" %></td>
+			<td><%= f.text_field :level %></td>
+      <td></td>
+      <td></td>
+		</tr>
+		<tr>
+			<td><%= f.label :sheet, "登録シート" %></td>
+			<td><%= f.text_field :sheet %></td>
+			<td></td>
+			<td></td>
+      <td></td>
+      <td></td>
+		</tr>
+		<tr>
+			<td><%= f.label :deliverytime, "提供時間" %></td>
+			<td><%= f.text_field :deliverytime %></td>
+			<td><%= f.label :day, "曜日" %></td>
+			<td><%= f.text_field :day %></td>
+      <td></td>
+      <td></td>
+		</tr>
+		<tr>
+			<td><%= f.label :a, "時間時間内" %></td>
+			<td><%= f.label :a, "会社名" %></td>
+			<td><%= f.label :a, "部署名" %></td>
+			<td><%= f.label :a, "氏名" %></td>
+      <td><%= f.label :a, "Email" %></td>
+      <td><%= f.label :a, "電話番号" %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :a, "1" %></td>
+			<td><%= f.text_field :company2 %></td>
+			<td><%= f.text_field :departmentname %></td>
+			<td><%= f.text_field :name %></td>
+      <td><%= f.text_field :email %></td>
+      <td><%= f.text_field :phone %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :a, "2" %></td>
+			<td><%= f.text_field :company3 %></td>
+			<td><%= f.text_field :departmentname2 %></td>
+			<td><%= f.text_field :name2 %></td>
+      <td><%= f.text_field :email2 %></td>
+      <td><%= f.text_field :phone2 %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :a, "3" %></td>
+			<td><%= f.text_field :company4 %></td>
+			<td><%= f.text_field :departmentname3 %></td>
+			<td><%= f.text_field :name3 %></td>
+      <td><%= f.text_field :email3 %></td>
+      <td><%= f.text_field :phone3 %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :remark, "備考" %></td>
+			<td colspan="7"><%= f.text_field :remark %></td>
+		</tr>
+
+	</table>
+		</tbody>
+		
+		<div class="col-sm-12 row text-center">
+		<%= f.submit '更新' , class: 'btn btn-default btn-left' %>
+		<%= link_to "一覧に戻る", customers_path , class: 'btn btn-default btn-left' %>
+    </div>
+	<% end %>
+</div>
+
