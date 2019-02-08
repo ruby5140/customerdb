@@ -19,9 +19,9 @@
 			<td class="col-md-1"><%= f.label :company, "会社名" %></td>
  			<td class="col-md-3"><%= f.text_field :company %></td>
  			<td class="col-md-1"><%= f.label :vdc, "識別子" %></td>
- 			<td class="col-md-2"><%= f.text_field :vdc %></td>
+ 			<td class="col-md-2"><%= f.text_field :vdc , placeholder:"VDCの識別子" %></td>
  			<td class="col-md-1"><%= f.label :contractdate, "契約日" %></td>
- 			<td class="col-md-2"><%= f.text_field :contractdate %></td>
+ 			<td class="col-md-2"><%= f.text_field :contractdate , placeholder:"yyyy/mm/dd" %></td>
 		</tr>
 		<tr>
 			<td class="col-md-"><%= f.label :server, "監視プロダクト" %></td>

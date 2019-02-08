@@ -11,7 +11,9 @@ class Customer < ApplicationRecord
 
 def self.search(search)
     #if search
-       Customer.where(['company LIKE ?', "%#{search}%"])
+       #Customer.where(['company LIKE ?', "%#{search}%"])
+       #Customer.where(kind: 0).where(name: ‘yamada’)
+        Customer.where(['company LIKE ?', "%#{search}%"])
     #else
       #Customer.all
     #end
