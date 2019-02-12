@@ -15,7 +15,7 @@
  <% @customers.each do |customer| %>
 	 <table class="table table-striped table-bordered" >
 		<tr>
-			 <td rowspan="10" class="col-md-1 td_vertical_align_middle" style="" align="center">
+			 <td rowspan="15" class="col-md-1 td_vertical_align_middle" style="" align="center">
 			  <%#= link_to customer.id, customer %>
      <% if can? :edit, @customer %>
         <%= link_to customer.id, customer %>
@@ -46,6 +46,34 @@
    <td>更新日</td>
    <td><%= customer.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
 		</tr>
+		
+
+		<tr>
+			<td><p>監視</p></td>
+			<td><p>URL</p></td>
+			<td><p>認証情報</p></td>
+			<td><p>IPアドレス</p></td>
+            <td><p>root</p></td>
+            <td><p>識別子</p></td>
+		</tr>
+		<tr>
+			<td><p>内部</p></td>
+			<td><%= customer.link %></td>
+			<td><%= customer.auth %></td>
+			<td><%= customer.ipadd %></td>
+      <td><%= customer.root %></td>
+      <td><%= customer.vdc2 %></td>
+		</tr>
+		<tr>
+			<td><p>外部</p></td>
+			<td><%= customer.link2 %></td>
+			<td><%= customer.auth2 %></td>
+			<td><%= customer.ipadd2 %></td>
+			<td><%= customer.root2 %></td>
+　　　<td><%= customer.vdc3 %></td>
+		</tr>
+		
+		
 		<tr>
 			<td>監視設定シート</td>
 			<td colspan="7"><%= customer.sheet %></td>
@@ -93,8 +121,10 @@
 			<td>備考</td>  
 			<td colspan="7"><%= customer.remark %></td>
 		</tr>
-		
-		
+
+
+
+
 		
 
 	</table>

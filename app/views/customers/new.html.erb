@@ -39,14 +39,45 @@
       <td></td>
       <td></td>
 		</tr>
+		
 		<tr>
-			<td><%= f.label :sheet, "登録シート" %></td>
+			<td><%= f.label :a, "監視" %></td>
+			<td><%= f.label :a, "URL" %></td>
+			<td><%= f.label :a, "認証情報" %></td>
+			<td><%= f.label :a, "IPアドレス" %></td>
+      <td><%= f.label :a, "root" %></td>
+      <td><%= f.label :a, "識別子" %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :a, "内部" %></td>
+			<td><%= f.text_field :link %></td>
+			<td><%= f.text_field :auth %></td>
+			<td><%= f.text_field :ipadd %></td>
+      <td><%= f.text_field :root %></td>
+      <td><%= f.text_field :vdc2 %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :a, "外部" %></td>
+			<td><%= f.text_field :link2 %></td>
+			<td><%= f.text_field :auth2 %></td>
+			<td><%= f.text_field :ipadd2 %></td>
+      <td><%= f.text_field :root2 %></td>
+      <td><%= f.text_field :vdc3 %></td>
+		</tr>
+		
+		<tr>
+			<td><%= f.label :sheet, "監視設定シート" %></td>
 			<td><%= f.text_field :sheet %></td>
 			<td></td>
 			<td></td>
       <td></td>
       <td></td>
 		</tr>
+		
+
+		
+		
+		
 		<tr>
 			<td><%= f.label :deliverytime, "提供時間" %></td>
 			<td><%= f.text_field :deliverytime %></td>
