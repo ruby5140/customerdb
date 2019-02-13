@@ -4,14 +4,30 @@
      </div>
       <div class="panel-body">
         <div class="row">
-          <%= form_tag(search_customers_path,:method => 'get') do %>
-           <div class="col-sm-6">
-               <!-- 会社名 -->
-               <div class="form-group">
-                <label class="col-sm-4 control-label" for="">会社名</label>
-                <div class="col-sm-8"><%= text_field_tag :search  %>
-                </div>
-               </div>
+          
+          <table>
+           <tr>
+            <%= form_tag(search_customers_path,:method => 'get') do %>
+              <td class="col-md-2">
+                    <div class="form-group"><label class="control-label" for="">キーワード</label>
+              <td class="col-md-2">
+                    <div><%= text_field_tag :search,'',size:50 %></div>
+              </td>
+              <td class="col-md-8">
+                  <div>
+                  <%= link_to customers_path, class: 'btn btn-default btn-left' do %>Clear<% end %>
+                  <%= submit_tag 'Search', :name => nil , class: 'btn btn-grey' %>
+                  <% end %>
+              </td>
+            </tr>
+          </table>
+        　 
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
                
 <% 
 =begin 
@@ -25,6 +41,9 @@
 <% 
 =end 
 %>
+<% 
+=begin 
+%>
            </div>
            
            <div class="col-sm-6">
@@ -34,6 +53,9 @@
                 <div class="col-sm-8"><%= text_field_tag :xxxxxx %>
                 </div>
                </div>
+<% 
+=end 
+%>
 <% 
 =begin 
 %> 
@@ -46,18 +68,7 @@
 <% 
 =end 
 %>
-           </div>
-        　 <div></div>
-           <div class="col-sm-12 row text-center">
-            <%= link_to customers_path, class: 'btn btn-default btn-left' do %>Clear<% end %>
-            <%= submit_tag 'Search', :name => nil , class: 'btn btn-grey' %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
 
