@@ -2,33 +2,28 @@
   <div class="panel-heading">
     <h3 class="panel-title"><i class="#fa fa-search"></i> 検索条件</h3>
      </div>
-      <div class="panel-body">
-        <div class="row">
-          
-          <table>
-           <tr>
-            <%= form_tag(search_customers_path,:method => 'get') do %>
-              <td class="col-md-2">
-                    <div class="form-group"><label class="control-label" for="">キーワード</label>
-              <td class="col-md-2">
-                    <div><%= text_field_tag :search,'',size:50 %></div>
-              </td>
-              <td class="col-md-8">
-                  <div>
+     
+
+
+      <div class="panel-body text-center">
+
+         <%= form_tag(search_customers_path,:method => 'get') do %>
+         
+   
+          <label class="control-label" for="">会社名</label>
+     
+                  <%= text_field_tag :search,'',size:50  , placeholder:"会社名を入力してください" %>
+    
                   <%= link_to customers_path, class: 'btn btn-default btn-left' do %>Clear<% end %>
                   <%= submit_tag 'Search', :name => nil , class: 'btn btn-grey' %>
                   <% end %>
-              </td>
-            </tr>
-          </table>
-        　 
 
-        </div>
       </div>
+
     </div>
   </div>
 </div>
-               
+
 <% 
 =begin 
 %>
@@ -68,12 +63,3 @@
 <% 
 =end 
 %>
-
-
-
-
-
-
-
-
-
