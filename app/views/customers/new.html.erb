@@ -1,4 +1,4 @@
-<!-- # バリデーション -->
+
 <%= render 'form', customer: @customers %>
 
 <style type="text/css">
@@ -132,34 +132,3 @@
     </div>
 	<% end %>
 </div>
-
-
-
-  
-
-
-
-
-<% 
-=begin 
-%>
-
-<%= form_for(@customers) do |f| %>
-  <%= f.label :company, "会社" %>
-  <%= f.text_field :company %>
-  <%= f.label :phone, "電話番号" %>
-  <%= f.text_field :phone %>
-  <%= f.label :server, "監視サーバ" %>
-  <%= f.text_field :server %>
-  <%= f.label :remark, "備考" %>
-  <%= f.text_field :remark %>
-  <%= f.submit '登録' %>
-<% end %>
-
-<%= link_to "一覧に戻る", customers_path %>
-
-<% 
-=end 
-%>
-
-

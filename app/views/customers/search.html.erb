@@ -121,108 +121,13 @@
 			<td>備考</td>  
 			<td colspan="7"><%= customer.remark %></td>
 		</tr>
-
-
-
-
-		
-
 	</table>
 		</tbody>
 	<% end %>
 </div>
 
-
 <div class="col-sm-12 row text-center">
 <%= link_to "csv出力", csv_output_customers_path(customer_ids: @customers.pluck(:id), format: :csv) , class: 'btn btn-default btn-left' %>
 <%= link_to "検索画面に戻る", customers_path , class: 'btn btn-default btn-left' %>
 </div>
-
-<% 
-=begin 
-%>
-
-      <div class="panel-body">
-       <%# if @customers %>
-        <% @customers.each do |customer| %>
-         <div class="row">
-           <div class="col-sm-6">
-               <!-- 会社名 -->
-               <div class="form-group">
-                <label class="col-sm-4 control-label" for="">会社名</label>
-                <div class="col-sm-8"><%= link_to customer.id, customer %> : <%= customer.company %>
-                </div>
-               </div>
-               
-               <!-- 電話番号 -->
-               <div class="form-group">
-                <label class="col-sm-4 control-label" for="">電話番号</label>
-                <div class="col-sm-8"><%= customer.phone %>
-                </div>
-               </div>
-           </div>
-           
-           <div class="col-sm-6">
-               <!-- サーバ -->
-               <div class="form-group">
-                <label class="col-sm-4 control-label" for="">サーバ</label>
-                <div class="col-sm-8"><%= customer.server %>
-                </div>
-               </div>
-             
-               <!-- 備考 -->
-               <div class="form-group">
-                <label class="col-sm-4 control-label" for="">備考</label>
-                <div class="col-sm-8"><%= customer.remark %>
-                </div>
-               </div>         
-           </div>
-          </div>
-         <% end %>
-       <%# end %>
-      </div>
-      
-      <div class="col-sm-12 row text-center">
-      <%= link_to "csv出力", csv_output_customers_path(customer_ids: @customers.pluck(:id), format: :csv) , class: 'btn btn-default btn-left' %>
-      <%= link_to "検索画面に戻る", customers_path , class: 'btn btn-default btn-left' %>
-      </div>
-
-<%
-=end
-%>
-
-<% 
-=begin 
-%>
-<% if @customers %>
-  <% @customers.each do |customer| %>
-     <li><%= link_to customer.id, customer %> : <%= customer.company %></li>
-     <li><%= customer.phone %></li>
-     <li><%= customer.server %></li>
-     <li><%= customer.remark %></li>
-  <% end %>
-<% end %>
-<%
-=end
-%>
-
-
-
-
-<% 
-=begin 
-%>
-複数行コメント
-<% if @customers %>
-  <% @customers.each do |customer| %>
-     <li><%= link_to customer.id, customer %> : <%= customer.company %></li>
-     <li><%= customer.phone %></li>
-     <li><%= customer.server %></li>
-     <li><%= customer.remark %></li>
-  <% end %>
-<% end %>
-
-<%
-=end
-%>
 
