@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe Customer, type: :model do
+RSpec.describe Customer, type: :test do
   #pending "add some examples to (or delete) #{__FILE__}"
   
   describe Customer do
     it 'is valid with company' do
-      customer = Customer.new(company: 'test' )
-      expect(customer).to eq customer
+      customer = FactoryBot.create(:customer)
+      expect(customer.save).to be_truthy
     end
   end
 end
