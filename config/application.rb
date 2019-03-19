@@ -23,6 +23,8 @@ module CustomerDb
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     
+    # add loading dir
+    config.eager_load_paths += %W(#{config.root}/lib)
     # UTC時間から変更
     config.time_zone = 'Tokyo'
     # レイアウト崩れ対策

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
         collection do
           get "search"
           get "csv_output"
+          
+          #csv
+          
         end
   end
 end

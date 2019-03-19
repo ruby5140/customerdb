@@ -5,7 +5,15 @@ class CustomersController < ApplicationController
     before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
     def index
-      
+        respond_to do |format|
+          
+          format.html {
+            @customers = Customer.all
+           }
+          format.csv {
+            send_data(File::Csv.export(:hello_world, Customer.all), filename: "customers.csv", type: :csv)
+          }
+      end
     end
     
     #search用
@@ -29,6 +37,9 @@ class CustomersController < ApplicationController
         @customers = Customer.where(id: params[:customer_ids])
         send_data render_to_string, filename: "customers.csv", type: :csv
     end
+   
+   
+    
    
     def show
         # before_action
@@ -91,4 +102,4 @@ class CustomersController < ApplicationController
         params.require(:customer).permit(:company , :company2 , :company3 , :company4 , :vdc , :contractdate , :server , :monitoring , :cancellationdate , :product , :level , :sheet , :deliverytime , :day , :departmentname , :departmentname2 , :departmentname3 , :name , :name2 , :name3 , :email , :email2 , :email3 , :phone , :phone2 , :phone3 , :remark , :link , :link2 , :auth , :auth2 , :ipadd , :ipadd2 , :root , :root2 , :vdc2 , :vdc3)
     
     end
-end    
+end
