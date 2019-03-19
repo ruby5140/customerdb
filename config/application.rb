@@ -25,9 +25,9 @@ module CustomerDb
     
     # add loading dir
     config.eager_load_paths += %W(#{config.root}/lib)
-    # UTC時間から変更
+    # UTC change
     config.time_zone = 'Tokyo'
-    # レイアウト崩れ対策
+    # layout
     config.action_view.field_error_proc = Proc.new do |html_tag, instance|
       if instance.kind_of?(ActionView::Helpers::Tags::Label)
          html_tag.html_safe
